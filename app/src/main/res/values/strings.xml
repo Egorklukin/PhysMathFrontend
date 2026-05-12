@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PhysMath</string>
+    <string name="action_settings">Settings</string>
+    <string name="enter">Войти</string>
+    <string name="topic_icon">Иконка темы</string>
+    <string name="open">Открыть</string>
+    <string name="search_topics">Поиск тем…</string>
+    <string name="no_topics_found">Темы не найдены</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">@color/background_dark</color>
+    <color name="text_main">@color/text_main_dark</color>
+    <color name="text_sub">@color/text_sub_dark</color>
+    <color name="text_hint">@color/text_hint_dark</color>
+    <color name="primary">@color/primary_dark</color>
+    <color name="accent">@color/accent_dark</color>
+    <color name="warning">@color/warning_dark</color>
+    <color name="error">@color/error_dark</color>
+
+    <color name="surface_light">@color/surface_dark</color>
+    <color name="color_surface">@color/surface_dark</color>
+
+    <color name="color_background">@color/background</color>
+    <color name="color_text_main">@color/text_main</color>
+    <color name="color_text_sub">@color/text_sub</color>
+    <color name="color_text_hint">@color/text_hint</color>
+    <color name="color_primary">@color/primary</color>
+    <color name="color_accent">@color/accent</color>
+    <color name="color_warning">@color/warning</color>
+    <color name="color_error">@color/error</color>
+</resources>
