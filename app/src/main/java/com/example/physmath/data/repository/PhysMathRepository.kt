@@ -45,7 +45,6 @@ class PhysMathRepository(
         }
     }
 
-    // Получение тем с fallback на офлайн
     suspend fun getTopics(subjectId: String): Result<List<Topic>> {
         return if (isOnline()) {
             syncTopics(subjectId).also { result ->
@@ -89,33 +88,6 @@ class PhysMathRepository(
 
     suspend fun updateLessonProgress(lessonId: String, progress: Float) {
         dao.updateLessonProgress(lessonId, progress)
-    }
-
-    suspend fun fetchLesson(id: String): Result<LessonEntity> {
-        return try {
-            if (!isOnline()) {
-                dao.getLessonById(id)?.let {
-                    return Result.success(it)
-                }
-            }
-
-            val lesson = api.getLesson(id)
-
-            val existingLesson = dao.getLessonById(id)
-            val lessonToSave = if (existingLesson != null) {
-                lesson.copy(
-                    isDownloaded = existingLesson.isDownloaded,
-                    downloadedAt = existingLesson.downloadedAt
-                )
-            } else {
-                lesson.copy(isDownloaded = false)
-            }
-
-            dao.insertLesson(lessonToSave)
-            Result.success(lesson)
-        } catch (e: Exception) {
-            Result.failure(e)
-        }
     }
 
     suspend fun syncTestResult(
