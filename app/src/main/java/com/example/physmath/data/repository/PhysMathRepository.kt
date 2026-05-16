@@ -8,8 +8,6 @@ import com.example.physmath.data.AppDao
 import com.example.physmath.data.entities.LessonEntity
 import com.example.physmath.data.entities.Question
 import com.example.physmath.data.entities.Subject
-import com.example.physmath.data.entities.SubjectEntity
-import com.example.physmath.data.entities.TestResultEntity
 import com.example.physmath.data.entities.Topic
 import com.example.physmath.data.entities.toDomains
 import com.example.physmath.data.entities.toEntities
@@ -147,13 +145,7 @@ class PhysMathRepository(
             )
         )
     }
-    suspend fun saveLessonForOffline(lesson: LessonEntity) {
-        dao.insertLesson(lesson.copy(isDownloaded = true, downloadedAt = System.currentTimeMillis()))
-    }
 
-    suspend fun markAsNotDownloaded(lessonId: String) {
-        dao.markAsNotDownloaded(lessonId)
-    }
     fun getSubjectsFromLocal(): Flow<List<Subject>> =
         dao.getAllSubjects()
             .map { it.toDomains() }
