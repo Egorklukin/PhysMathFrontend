@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.physmath.R
 import com.example.physmath.data.entities.Subject
 import com.example.physmath.databinding.ItemSubjectCardBinding
-import org.commonmark.node.Image
 
 class SubjectAdapter(
     private val onItemClick: (Subject) -> Unit
@@ -33,8 +32,8 @@ class SubjectAdapter(
             binding.tvSubjectTitle.text = subject.title
 
             val iconRes = when (subject.icon) {
-                "ic_math" -> R.drawable.math
-                "ic_physics" -> R.drawable.physics
+                "ic_math" -> R.drawable.ic_math
+                "ic_physics" -> R.drawable.ic_physics
                 else -> R.drawable.ic_default_subject
             }
             binding.ivSubjectIcon.setImageResource(iconRes)

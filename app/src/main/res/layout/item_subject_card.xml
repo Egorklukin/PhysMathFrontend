@@ -20,7 +20,7 @@
             android:id="@+id/iv_subject_icon"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/math"
+            android:src="@drawable/ic_math"
             android:contentDescription="sdfsd"/>
 
         <TextView

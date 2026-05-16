@@ -83,7 +83,7 @@ class TestsListFragment : Fragment(R.layout.fragment_tests_list) {
         binding.tvPlaceholder.visibility = if (isEmpty) View.VISIBLE else View.GONE
 
         if (isEmpty) {
-            binding.tvPlaceholder.text = "📚 Тестов пока нет. Пройдите урок, чтобы разблокировать тест."
+            binding.tvPlaceholder.text = "📚 Тестов пока нет. Скачайте урок, чтобы разблокировать тест."
         }
     }
 
