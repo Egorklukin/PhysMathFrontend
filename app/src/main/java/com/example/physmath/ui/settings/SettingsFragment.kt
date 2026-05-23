@@ -119,7 +119,6 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
         )
     }
     private fun setupOfflineCard() {
-        // Прогресс
         viewModel.downloadProgress.observe(viewLifecycleOwner) { progress ->
             binding.pbDownload.visibility = if (progress.current in 0..100) View.VISIBLE else View.GONE
             binding.tvDownloadStatus.visibility = View.VISIBLE
@@ -128,7 +127,6 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             binding.btnDownloadAll.isEnabled = progress.current != 100 && progress.current >= 0
         }
 
-        // Статус "всё скачано"
         viewModel.isAllDownloaded.observe(viewLifecycleOwner) { isDownloaded ->
             binding.btnDownloadAll.text = if (isDownloaded) {
                 "✅ Всё загружено"
@@ -138,12 +136,10 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             binding.btnDownloadAll.isEnabled = !isDownloaded
         }
 
-        // Кнопка "Загрузить всё"
         binding.btnDownloadAll.setOnClickListener {
             viewModel.downloadAllContent()
         }
 
-        // Кнопка "Очистить кэш"
         binding.btnDeleteAll.setOnClickListener {
             androidx.appcompat.app.AlertDialog.Builder(requireContext())
                 .setTitle("🗑️ Очистить кэш?")

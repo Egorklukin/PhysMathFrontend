@@ -110,7 +110,7 @@ class TopicListFragment : Fragment(R.layout.fragment_topic_list) {
         lifecycleScope.launch {
             try {
                 viewModel.loadTopics(args.subjectId)
-            } catch (e: Exception) {
+            } catch (_: Exception) {
 
             }
         }

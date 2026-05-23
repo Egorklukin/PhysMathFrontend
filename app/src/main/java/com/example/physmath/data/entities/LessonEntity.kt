@@ -27,8 +27,8 @@ data class LessonEntity(
 @Entity(tableName = "test_results")
 data class TestResultEntity(
     @PrimaryKey val lessonId: String,
-    val score: Int, // правильне ответы
-    val totalQuestions: Int, // общее кол-во вопр
+    val score: Int,
+    val totalQuestions: Int,
     val answersJson: String,
     val timestamp: Long = System.currentTimeMillis()
 )

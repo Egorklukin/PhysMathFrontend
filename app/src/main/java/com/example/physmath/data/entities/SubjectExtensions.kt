@@ -1,6 +1,5 @@
 package com.example.physmath.data.entities
 
-// api -> room
 fun Subject.toEntity(): SubjectEntity {
     return SubjectEntity(
         id = this.id,
@@ -10,7 +9,6 @@ fun Subject.toEntity(): SubjectEntity {
     )
 }
 
-// room -> api
 fun SubjectEntity.toDomain(): Subject {
     return Subject(
         id = this.id,

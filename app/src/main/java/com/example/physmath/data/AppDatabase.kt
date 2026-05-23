@@ -22,7 +22,6 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "physmath_db"
                 )
-                    .fallbackToDestructiveMigration()
                     .build().also { INSTANCE = it }
             }
         }

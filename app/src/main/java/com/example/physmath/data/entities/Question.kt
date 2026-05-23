@@ -14,7 +14,7 @@ data class Question(
     val questionText: String,
 
     @SerializedName("optionsJson")
-    val optionsJson: String,         // "[\"A\", \"B\", \"C\"]"
+    val optionsJson: String,
 
     @SerializedName("correctAnswer")
     val correctAnswer: String,
@@ -25,12 +25,11 @@ data class Question(
     @SerializedName("orderIndex")
     val orderIndex: Int
 ) {
-    // парсинг json строку в список
     fun getOptions(): List<String> {
         return try {
             val listType = object : TypeToken<List<String>>() {}.type
             Gson().fromJson(optionsJson, listType)
-        } catch (e: Exception) {
+        } catch (_: Exception) {
             listOf("Ошибка загрузки вариантов")
         }
     }

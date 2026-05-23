@@ -102,7 +102,7 @@ class SettingsViewModel(app: Application) : AndroidViewModel(app) {
 
                 _toast.postValue("Импорт завершен")
             } catch (e: Exception) {
-                _toast.postValue("Sorry, data from this file can't be import")
+                _toast.postValue("Произошла ошибка во время импорта")
             }
         }
     }

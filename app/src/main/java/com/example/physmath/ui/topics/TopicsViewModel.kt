@@ -17,13 +17,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class TopicViewModel(private val repository: PhysMathRepository) : AndroidViewModel(Application()) {
-
-//    private val repository = PhysMathRepository(
-//        dao = AppDatabase.getInstance(application).dao(),
-//        api = RetrofitClient.api,
-//        context = application
-//    )
-
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
@@ -83,7 +76,7 @@ class TopicViewModel(private val repository: PhysMathRepository) : AndroidViewMo
                     _topics.value = filtered
                     _isEmpty.value = filtered.isEmpty()
                 }
-            } catch (e: Exception) {
+            } catch (_: Exception) {
                 val localTopics = repository.getTopicsFromLocal(subjectId).first()
                 val filtered = localTopics.filter {
                     it.title.contains(query, ignoreCase = true)

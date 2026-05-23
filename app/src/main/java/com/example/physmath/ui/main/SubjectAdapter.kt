@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.physmath.R
 import com.example.physmath.data.entities.Subject
 import com.example.physmath.databinding.ItemSubjectCardBinding
+import androidx.core.graphics.toColorInt
 
 class SubjectAdapter(
     private val onItemClick: (Subject) -> Unit
@@ -39,7 +40,7 @@ class SubjectAdapter(
             binding.ivSubjectIcon.setImageResource(iconRes)
 
             binding.cardSubject.setCardBackgroundColor(
-                android.graphics.Color.parseColor(subject.color)
+                subject.color.toColorInt()
             )
 
             binding.root.setOnClickListener { onItemClick(subject) }
